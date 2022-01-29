@@ -1,0 +1,27 @@
+{
+  "name": "Tmac Bridge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bestboom/breeze_defi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bestboom/breeze_defi/issues"
+  },
+  "homepage": "https://github.com/bestboom/breeze_defi#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "breej": "^1.1.1",
+    "crypto-js": "^4.1.1",
+    "express": "^4.17.2",
+    "node-fetch": "^3.1.0",
+    "web3": "^1.6.1"
+  }
+}
