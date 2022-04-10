@@ -9,7 +9,7 @@ const { STAKING_ABI } = require('./contracts/STAKINGCONTRACT');
 const admin = '0x95610bfe8f08551DA773F0aa44f2EE87eA51D53E';
 const privateKey = process.env.privKey;
 
-const staking_contract_address = '0xa84317c321117966b497545933323f2b42bf74c8';
+const staking_contract_address = '0xddc435fdeee94614539fe58e15a54a04546e00a7';
 const staking_contract = new Web3EthContract(STAKING_ABI, staking_contract_address);
 
 start = async function() {
