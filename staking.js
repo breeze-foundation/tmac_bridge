@@ -69,13 +69,22 @@ const processStaking = async function () {
 						let senders = 'breeze-staker';
 						let newTx = { type: 3, data: { receiver: 'null', amount: parseInt(stk_balance), memo: '' } }; 
 						let signedTx = breej.sign(wifsKey, senders, newTx);
-						breej.sendTransaction(signedTx, (error, result) => { if (error === null) { console.log('breeze staking account tokens burnt') } else { console.log(error['error']) } })
-          
-						let wiflKey = process.env.wifKeyL;
-						let senderl = 'breeze-lpminer';
-						let newTxl = { type: 3, data: { receiver: 'null', amount: parseInt(lp_balance), memo: '' } }; 
-						let signedTxl = breej.sign(wiflKey, senderl, newTxl);
-						breej.sendTransaction(signedTxl, (error, result) => { if (error === null) { console.log('breeze mining account tokens burnt') } else { console.log(error['error']) } })
+						breej.sendTransaction(signedTx, (error, result) => { 
+							if (error === null) 
+								{ console.log('breeze staking account tokens burnt');
+
+									let wiflKey = process.env.wifKeyL;
+									let senderl = 'breeze-lpminer';
+									let newTxl = { type: 3, data: { receiver: 'null', amount: parseInt(lp_balance), memo: '' } }; 
+									let signedTxl = breej.sign(wiflKey, senderl, newTxl);
+									breej.sendTransaction(signedTxl, (error, result) => { 
+										if (error === null) 
+											{ 
+												console.log('breeze mining account tokens burnt') 
+											} else { console.log(error['error']) } })
+
+								} else { console.log(error['error']) } 
+						})
           
           } else {
             console.log(e);
