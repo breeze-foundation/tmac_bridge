@@ -16,7 +16,7 @@ start = async function() {
   processFarming();
   setInterval(() => {
     processFarming();
-  }, 35 * 60 * 1000);
+  }, 8 * 60 * 60 * 1000);
 }
 
 const processFarming = async function () {
