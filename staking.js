@@ -23,9 +23,10 @@ const processStaking = async function () {
 
 	const lp_acc = await axios.get('https://api.breezechain.org/account/breeze-lpminer')
 	lp_balance = lp_acc.data.balance;
-
+	console.log(lp_balance)
 	const stk_acc = await axios.get('https://api.breezechain.org/account/breeze-staker')
 	stk_balance = stk_acc.data.balance;
+	console.log(stk_balance)
 
 	const tot_balance = (lp_balance+stk_balance)/1e6;
 	const defi_balance = parseInt(lp_balance+stk_balance)
