@@ -4,6 +4,9 @@ const Web3EthContract = require('web3-eth-contract');
 const axios = require('axios')
 const breej = require('breej')
 
+const api = 'https://api.breezescan.io';
+breej.init({ api: api})
+
 const { STAKING_ABI } = require('./contracts/STAKINGCONTRACT');
 
 const admin = '0x95610bfe8f08551DA773F0aa44f2EE87eA51D53E';
