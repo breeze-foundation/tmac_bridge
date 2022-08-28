@@ -4,7 +4,7 @@ const Web3EthContract = require('web3-eth-contract');
 const axios = require('axios')
 const breej = require('breej')
 
-const api = 'https://api.breezescan.io';
+const api = 'https://api.breezechain.org';
 breej.init({ api: api})
 
 const { STAKING_ABI } = require('./contracts/STAKINGCONTRACT');
@@ -24,10 +24,10 @@ start = async function() {
 
 const processStaking = async function () {
 
-	const lp_acc = await axios.get('https://api.breezescan.io/account/breeze-lpminer')
+	const lp_acc = await axios.get(api+'/account/breeze-lpminer')
 	lp_balance = lp_acc.data.balance;
 	console.log(lp_balance)
-	const stk_acc = await axios.get('https://api.breezescan.io/account/breeze-staker')
+	const stk_acc = await axios.get(api+'/account/breeze-staker')
 	stk_balance = stk_acc.data.balance;
 	console.log(stk_balance)
 
