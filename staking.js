@@ -37,7 +37,8 @@ const processStaking = async function () {
 
 
 	if(defi_balance>15000000){
-		amount=parseInt(defi_balance)
+		//amount=parseInt(defi_balance);
+		amount=parseInt(stk_balance)
 		
 		let getData = await staking_contract.methods.notifyRewardAmount(amount);
 	  let data = getData.encodeABI();
@@ -75,11 +76,11 @@ const processStaking = async function () {
 						let signedTx = breej.sign(wifsKey, senders, newTx);
 						breej.sendTransaction(signedTx, (error, result) => { if (error === null) { console.log('breeze staking account tokens burnt') } else { console.log(error['error']) } })
           
-						let wiflKey = process.env.wifKeyL;
-						let senderl = 'breeze-lpminer';
-						let newTxl = { type: 3, data: { receiver: 'null', amount: parseInt(lp_balance), memo: '' } }; 
-						let signedTxl = breej.sign(wiflKey, senderl, newTxl);
-						breej.sendTransaction(signedTxl, (error, result) => { if (error === null) { console.log('breeze mining account tokens burnt') } else { console.log(error['error']) } })
+						//let wiflKey = process.env.wifKeyL;
+						//let senderl = 'breeze-lpminer';
+						//let newTxl = { type: 3, data: { receiver: 'null', amount: parseInt(lp_balance), memo: '' } }; 
+						//let signedTxl = breej.sign(wiflKey, senderl, newTxl);
+						//breej.sendTransaction(signedTxl, (error, result) => { if (error === null) { console.log('breeze mining account tokens burnt') } else { console.log(error['error']) } })
           
           } else {
             console.log(e);
